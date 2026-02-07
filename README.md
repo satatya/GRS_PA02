@@ -1,10 +1,8 @@
-<!-- MT25084 -->
-
-# CSE638 / Graduate Systems — PA02 (Network I/O Cost Study)
+# CSE638 / Graduate Systems — PA02 
 
 **Roll No:** MT25084  
-**Student Name:** *(fill in)*  
-**Submission folder name:** `GRS_PA02` *(as per handout)*
+**Student Name:** Satatya De
+**Submission folder name:** `GRS_PA02` 
 
 This repository contains my PA02 implementation + experiment automation for comparing:
 
@@ -28,15 +26,10 @@ The experiments are run in **separate Linux network namespaces** (no VM) using a
   Creates namespaces, compiles A1/A2/A3, runs the full grid, parses `perf stat` outputs, and writes:
   - `MT25084_Part_C_results.csv`
 
-Raw per-run files (if kept):
-- `MT25084_Part_C_raw_<tag>_perf.csv`
-- `MT25084_Part_C_raw_<tag>_server.log`
-- `MT25084_Part_C_raw_<tag>_client<i>.log`
-
 ### Part D — Derived metrics + plots
 - `MT25084_Part_D_Plot.py` — reads Part C CSV, produces:
   - `MT25084_Part_D_derived.csv`
-  - `MT25084_Part_D_plots/` (png + pdf plots)
+  - `MT25084_Part_D_plots/` (report has the plots)
 - `MT25084_Part_D_Run.sh` — wrapper to run the plot script
 
 ### Build
@@ -152,7 +145,7 @@ wait
 
 ## 6) Collect `perf stat` for one run (manual)
 
-You can run perf around the server process. Example (A1, 4 clients, 10 seconds):
+Run perf around the server process. Example (A1, 4 clients, 10 seconds):
 ```bash
 sudo ip netns exec ns_srv perf stat   -e cycles,context-switches,cache-misses,L1-dcache-load-misses,LLC-load-misses   -o perf_A1_m1024_t4.txt   ./MT25084_Part_A1_Server 9090 1024 10 4
 ```
@@ -251,8 +244,6 @@ The handout requires a clean submission zip. Before creating the final zip:
 ---
 
 ## 11) System information (fill in from your machine)
-
-Paste outputs here:
 
 ```bash
 uname -a
